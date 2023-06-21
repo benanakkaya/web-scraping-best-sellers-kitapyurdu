@@ -1,10 +1,11 @@
 import { Book } from "@/app/types/BookType";
 import cheerio from "cheerio"
+import { cache } from "react";
 
 
 export async function GET(request: Request) {
 
-    const response = await fetch(`https://www.kitapyurdu.com/index.php?route=product/best_sellers&list_id=16&filter_in_stock=1`)
+    const response = await fetch(`https://www.kitapyurdu.com/cok-satan-kitaplar/haftalik/1.html`, {cache:"no-store"})
 
     const html = await response.text();
 
